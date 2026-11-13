@@ -820,6 +820,23 @@ declare class ServiceExtensionContext extends ExtensionContext {
   terminateSelf(): Promise<void>;
 
   /**
+   * Requests termination only when this SERVICE extension has no newer accepted start request.
+   * Pass the exact positive startId delivered to onRequest after completing that request's work.
+   * A false result leaves the service running so newer requests can continue.
+   *
+   * @param { int } expectedStartId - Positive int32 startId delivered to this instance's onRequest.
+   * @returns { Promise<boolean> } True when the matching instance entered termination, false for a newer request.
+   * @throws { BusinessError } 401 - expectedStartId is not a positive int32.
+   * @throws { BusinessError } 16000011 - The context does not exist.
+   * @throws { BusinessError } 16000050 - The service, token or transport failed.
+   * @syscap SystemCapability.Ability.AbilityRuntime.Core
+   * @systemapi
+   * @stagemodelonly
+   * @since 26.0.0 dynamic
+   */
+  terminateSelfIfStartId(expectedStartId: int): Promise<boolean>;
+
+  /**
    * Connects this ability to a ServiceExtensionAbility. This API can be called only on the main thread.
    *
    * > **NOTE**

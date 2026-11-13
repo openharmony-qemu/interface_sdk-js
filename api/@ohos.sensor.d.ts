@@ -2885,7 +2885,7 @@ declare namespace sensor {
    * Subscribes to data changes of the heart rate sensor. If this API is called multiple times for the same application,
    * the last call takes effect.
    *
-   * @permission ohos.permission.HEALTH_DATA
+   * @permission ohos.permission.READ_HEALTH_DATA
    * @param { SensorType.SENSOR_TYPE_ID_HEART_RATE } type - Type of the sensor to subscribe to, which is
    *     **SENSOR_TYPE_ID_HEART_RATE**.
    * @param { Callback<HeartRateResponse> } callback - Callback used to return the heart rate sensor data. The reported
@@ -3234,7 +3234,7 @@ declare namespace sensor {
   /**
    * Subscribes to only one data change of the heart rate sensor.
    *
-   * @permission ohos.permission.HEART_RATE
+   * @permission ohos.permission.READ_HEALTH_DATA
    * @param { SensorType.SENSOR_TYPE_ID_HEART_RATE } type - Type of the sensor to subscribe to, which is
    *     **SENSOR_TYPE_ID_HEART_RATE**.
    * @param { Callback<HeartRateResponse> } callback - One-shot callback used to return the heart rate sensor data. The
@@ -3537,7 +3537,7 @@ declare namespace sensor {
   /**
    * Unsubscribes from sensor data changes.
    *
-   * @permission ohos.permission.HEALTH_DATA
+   * @permission ohos.permission.READ_HEALTH_DATA
    * @param { SensorType.SENSOR_TYPE_ID_HEART_RATE } type - Type of the sensor to unsubscribe from, which is
    *     **SENSOR_TYPE_ID_HEART_RATE**.
    * @param { Callback<HeartRateResponse> } callback - Callback used for unsubscription. If this parameter is not
